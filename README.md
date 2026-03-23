@@ -89,5 +89,7 @@ The following areas were not addressed in this implementation:
 
 **Message Features** — Functionality such as editing a sent message or cancelling/deleting a message has not been considered and would require changes to both the data model and persistence layer.
 
+**Optimistic Messaging** — Sending a message is an optimistic operation: the chat is updated instantly without waiting for the message to be persisted. The error case — where the save fails — is currently not handled. This is an accepted trade-off made due to lack of context around the UI/UX requirements and the need to save development time.
+
 
 
